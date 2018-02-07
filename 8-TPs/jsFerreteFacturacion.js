@@ -14,6 +14,10 @@ function Sumar ()
 	precio2 = document.getElementById('PrecioDos').value;
 	precio3 = document.getElementById('PrecioTres').value;
 
+	precio1 = parseInt(precio1);
+	precio2 = parseInt(precio2);
+	precio3 = parseInt(precio3);
+
 	total= precio1  + precio2 + precio3;
 
 	alert ("El precio total es"+total);

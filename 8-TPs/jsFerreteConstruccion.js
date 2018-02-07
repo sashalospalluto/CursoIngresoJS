@@ -13,7 +13,10 @@ function Rectangulo ()
 	largo = document.getElementById('Largo').value;
 	ancho = document.getElementById('Ancho').value;
 
-	TotalAlambre= (2*largo)+(2*ancho);
+	largo = parseInt(largo);
+	ancho = parseInt(ancho);
+
+	TotalAlambre= (((2*largo)+(2*ancho))*3);
 
 	alert ("el total de alambre que se debe utilizar son "+TotalAlambre+" metros");
 
@@ -25,7 +28,7 @@ function Circulo ()
 
 	radio = document.getElementById('Radio').value;
 
-	TotalAlambre= 2*3.14*radio;
+	TotalAlambre= ((2*3.14*radio)*3);
 
 	alert ("el total de alambre que se debe utilizar son "+TotalAlambre+" metros");
 
@@ -34,7 +37,11 @@ function Circulo ()
 function Materiales () 
 {
 	var radio;
+	var cemento;
+	var cal;
 
 	radio = document.getElementById('Radio').value;
+
+
 
 }
