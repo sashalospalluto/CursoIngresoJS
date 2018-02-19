@@ -16,7 +16,7 @@ function comenzar()
 {
 
 	//Genero el número RANDOM entre 1 y 100
-		numeroSecreto=Math.floor(Math.random() * 100); 
+		numeroSecreto=Math.floor(Math.random() * 100)+1; 
 	 
 		//alert(numeroSecreto );
 
@@ -30,13 +30,11 @@ function verificar()
 	var numeroIngresado;
 	var diferenciaNumero;
 
-	numeroSecreto=Math.floor(Math.random() * 100);
-
 	numeroIngresado=document.getElementById('numero').value;
 	contadorIntentos++;
 	document.getElementById('intentos').value=contadorIntentos;
 	
-	if (numeroIngresado=numeroSecreto)
+	if (numeroIngresado==numeroSecreto)
 	{
 		alert ("Usted es un ganador");
 	}
