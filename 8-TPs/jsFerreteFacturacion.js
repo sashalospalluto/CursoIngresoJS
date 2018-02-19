@@ -20,7 +20,7 @@ function Sumar ()
 
 	total= precio1  + precio2 + precio3;
 
-	alert ("El precio total es"+total);
+	alert ("El precio total es "+total);
 
 }
 
@@ -35,7 +35,11 @@ function Promedio ()
 	precio2 = document.getElementById('PrecioDos').value;
 	precio3 = document.getElementById('PrecioTres').value;
 
-	promedio=(precio+precio2+precio3)/3;
+	precio1 = parseInt(precio1);
+	precio2 = parseInt(precio2);
+	precio3 = parseInt(precio3);
+
+	promedio=(precio1+precio2+precio3)/3;
 
 	alert ("Su promedio es: "+promedio);
 
@@ -54,8 +58,12 @@ function PrecioFinal ()
 	precio2 = document.getElementById('PrecioDos').value;
 	precio3 = document.getElementById('PrecioTres').value;
 
+	precio1 = parseInt(precio1);
+	precio2 = parseInt(precio2);
+	precio3 = parseInt(precio3);
+
 	total=precio1+precio2+precio3;
-	totalconiva= 21*total/100;
+	totalconiva= (total*0.21)+total;
 
 	alert ("El precio final con iva es "+totalconiva);
 

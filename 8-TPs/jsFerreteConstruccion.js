@@ -36,11 +36,18 @@ function Circulo ()
 
 function Materiales () 
 {
-	var radio;
+	var ancho;
+	var largo
 	var cemento;
 	var cal;
 
-	radio = document.getElementById('Radio').value;
+	largo = document.getElementById('Largo').value;
+	ancho = document.getElementById('Ancho').value;
+
+	cemento= (ancho*largo)*2;
+	cal= (ancho*largo)*3;
+
+	alert ("Para un terreno de "+ancho+"x"+largo+" se necesitan "+cemento+" bolsas de cemento y "+cal+" bolsas de cal");
 
 
 

@@ -8,9 +8,92 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
  */
-function CalcularPrecio () 
+	function CalcularPrecio () 
+	{
+ 	
+	var precioFinal;
+ 	var cantidad;
+ 	var marca;
+ 	var precioUni;
+ 	var iibb //ingresos brutos
+
+ 	precioUni=35;
+
+ 	cantidad= document.getElementById('Cantidad').value;
+ 	marca=document.getElementById('Marca').value;
+
+ 	switch (cantidad)
+ 		{
+ 			case 1:
+ 			case 2:
+ 				precioFinal= precioUni*cantidad;
+ 				break;
+
+ 			case 3:
+ 				
+ 				if (marca = "ArgentinaLuz")
+ 				{
+ 					precioFinal = (precioUni*cantidad)-((precioUni*cantidad)*0.15);
+ 				}
+ 				
+ 				if (marca="FelipeLamparas")
+ 				{
+ 					precioFinal = (precioUni*cantidad)-((precioUni*cantidad)*0.1);
+ 				}else
+ 					{
+ 						precioFinal = (precioUni*cantidad)-((precioUni*cantidad)*0.05);
+ 					}
+ 				break;
+
+ 			case 4:
+ 				
+ 				if (marca= "FelipeLamparas"|| marca="ArgentinaLuz")
+ 				{
+ 					precioFinal = (precioUni*cantidad)-((precioUni*cantidad)*0.25);
+ 				}	else
+ 					{
+ 						precioFinal = (precioUni*cantidad)-((precioUni*cantidad)*0.2);
+ 					}
+ 				break;
+
+ 			case 5:
+ 				
+
+ 				if (marca="ArgentinaLuz")
+ 				{
+ 					precioFinal = (precioUni*cantidad)-((precioUni*cantidad)*0.4);
+ 				}	else
+ 					{
+ 						precioFinal = (precioUni*cantidad)-((precioUni*cantidad)*0.3);
+ 					}
+ 			default:
+
+ 				precioFinal = (precioUni*cantidad)-((precioUni*cantidad)*0.5);
+ 				break;
+
+ 		}
+
+	document.getElementById('precioDescuento')=precioFinal;
+
+	if (precioFinal>119)
+	{
+		iibb = precioFinal*0.1;
+
+		alert ("De IIBB usted pago $"+iibb);
+	}
+
+
+ 
+	}
+
+
+
+
+/*
+
 {
- 	var precioFinal;
+ 	
+var precioFinal;
  	var cantidad;
  	var marca;
  	var precioUni;
@@ -65,3 +148,6 @@ function CalcularPrecio ()
 
  	document.getElementById('')
 }
+
+*/
+
