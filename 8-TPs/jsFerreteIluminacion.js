@@ -9,7 +9,7 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
 
  */
 	function CalcularPrecio () 
-	{
+{
  	
 	var precioFinal;
  	var cantidad;
@@ -21,22 +21,23 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
 
  	cantidad= document.getElementById('Cantidad').value;
  	marca=document.getElementById('Marca').value;
+ 	cantidad=parseInt(cantidad);
 
  	switch (cantidad)
  		{
  			case 1:
  			case 2:
- 				precioFinal= precioUni*cantidad;
+ 				precioFinal= (precioUni*cantidad);
  				break;
 
  			case 3:
  				
- 				if (marca = "ArgentinaLuz")
+ 				if (marca == "ArgentinaLuz")
  				{
  					precioFinal = (precioUni*cantidad)-((precioUni*cantidad)*0.15);
  				}
  				
- 				if (marca="FelipeLamparas")
+ 				if (marca=="FelipeLamparas")
  				{
  					precioFinal = (precioUni*cantidad)-((precioUni*cantidad)*0.1);
  				}else
@@ -47,7 +48,7 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
 
  			case 4:
  				
- 				if (marca= "FelipeLamparas"|| marca="ArgentinaLuz")
+ 				if (marca== "FelipeLamparas"|| marca=="ArgentinaLuz")
  				{
  					precioFinal = (precioUni*cantidad)-((precioUni*cantidad)*0.25);
  				}	else
@@ -59,7 +60,7 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  			case 5:
  				
 
- 				if (marca="ArgentinaLuz")
+ 				if (marca=="ArgentinaLuz")
  				{
  					precioFinal = (precioUni*cantidad)-((precioUni*cantidad)*0.4);
  				}	else
@@ -73,7 +74,7 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
 
  		}
 
-	document.getElementById('precioDescuento')=precioFinal;
+	document.getElementById('precioDescuento').value=precioFinal;
 
 	if (precioFinal>119)
 	{
@@ -84,13 +85,13 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
 
 
  
-	}
+}
+
 
 
 
 
 /*
-
 {
  	
 var precioFinal;
