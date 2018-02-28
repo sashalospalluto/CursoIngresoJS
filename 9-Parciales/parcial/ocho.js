@@ -1,3 +1,206 @@
+//nombre de animal
+//peso animal (+0kg)
+//temperatura del habitat (-40 a +40)
+
+//informar: cantidad de temperaturas pares ingresadas
+//cant de temperatura impar
+//nombre del animal mas pesado
+//nombre del animal menos pesado
+//cantidad de animales cuyo habitat tiene menos de 0 grados
+//promedio de peso de todos los animales
+//temperatura maxima y minima
+
+
+	function Mostrar()
+{
+	var NombreAnimal;
+	var pesoAnimal;
+	var temperatura;
+	var opcion="";
+	var temperaturasPar=0;
+	var temperaturasImpar=0;
+	var pesoMaximo=0;
+	var nombreMasPesado;
+	var pesoMinimo;
+	var nombreMenosPesado;
+	var contador=0;
+	var habitatBajoCero=0;
+	var sumaPesos;
+	var promedioPeso;
+	var temperaturaMaxima;
+	var temperaturaMinima;
+
+
+	while (opcion!="no")
+	{
+		contador++;
+		NombreAnimal=prompt("Ingrese el nombre del animal");
+		while(!isNaN(NombreAnimal))
+		{
+			NombreAnimal=prompt("Ingrese el nombre del animal CORRECTAMENTE");
+		}
+
+		pesoAnimal=prompt("Ingrese el peso");
+		pesoAnimal=parseInt(pesoAnimal);
+
+		while(pesoAnimal<=0 || isNaN(pesoAnimal))
+		{
+			pesoAnimal=prompt("Ingrese el peso CORRECTAMENTE");
+			pesoAnimal=parseInt(pesoAnimal);		
+		}
+
+		sumaPesos=sumaPesos+pesoAnimal
+
+		if (contador==1)
+		{
+			pesoMaximo=pesoAnimal;
+			pesoMinimo=pesoAnimal;
+
+		}	else
+			{
+				if(pesoAnimal>pesoMaximo)
+				{
+					pesoMaximo=pesoAnimal;
+					nombreMasPesado=NombreAnimal;
+				}	else
+					{
+						if(pesoAnimal<pesoMinimo)
+						{
+							pesoMinimo=pesoAnimal;
+							nombreMenosPesado=NombreAnimal;
+						}
+					}
+			}
+
+		temperatura=prompt("Ingrese la temperatura del habitat");
+		temperatura=parseInt(temperatura);
+
+		while (temperatura<-40 || temperatura>40 || isNaN(temperatura))
+		{
+			temperatura=prompt("Ingrese la temperatura del habitat CORRECTAMENTE");
+			temperatura=parseInt(temperatura);
+
+		}
+
+		if (temperatura%2==0 && temperatura!=0)
+		{
+			temperaturasPar++;
+		}	else
+			{
+				if(temperatura%2!=0 && temperatura!=0)
+				{
+					temperaturasImpar++;
+				}
+			}
+		if (temperatura<0)
+		{
+			habitatBajoCero++;
+		}
+
+		if (contador==1)
+		{
+			temperaturaMaxima=temperatura;
+			temperaturaMinima=temperatura;
+		}	else
+			{
+				if (temperatura>temperaturaMaxima)
+				{
+					temperaturaMaxima=temperatura
+				}	else
+					{
+						if (temperatura<temperaturaMinima)
+						{
+							temperaturaMinima=temperatura
+						}
+					}
+			}
+
+
+
+		opcion=prompt("'no' para salir");
+
+	}
+
+	promedioPeso=sumaPesos/contador;
+
+	document.write ("La cantidad de temperaturas impar son: "+temperaturasImpar);
+	document.write ("La cantidad de temperaturas par son "+temperaturasPar);
+	document.write ("El nombre del animal mas pesado es: "+nombreMasPesado+ "con "+pesoMaximo+" kg");
+	document.write ("El nombre del animal mas liviano es: "+nombreMenosPesado+ "con "+pesoMinimo+" kg");
+	document.write ("El promedio del peso de todos los animales es "+promedioPeso+" kg");
+	document.write ("La temperatura maxima es: "+temperaturaMaxima);
+	document.write ("La temperatura minima es: "+temperaturaMinima);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 // SE PIDE:
 // 1. cantidad de alumnos
 // 2. promedio total de las notas
@@ -149,3 +352,4 @@
 
 	
 }
+*/
